@@ -1,4 +1,6 @@
-package bst
+package excercises
+
+import ()
 
 // Find the index of the first leftmost occurrence of k in XS.
 // Time Complexity: log(n)
