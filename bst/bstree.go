@@ -10,6 +10,18 @@ func NewBSTree(key int) *BSTree {
 	return &BSTree{Key: key}
 }
 
+func (t *BSTree) Height() int {
+	if t == nil {
+		return -1
+	}
+	lh := 1 + t.Left.Height()
+	rh := 1 + t.Right.Height()
+	if lh > rh {
+		return lh
+	}
+	return rh
+}
+
 func (t *BSTree) Insert(key int) {
 	if t == nil {
 		return
