@@ -23,4 +23,5 @@ func (n *Node) Traverse() {
 		fmt.Printf("%v", node.Data)
 		node = node.Next
 	}
+	println()
 }

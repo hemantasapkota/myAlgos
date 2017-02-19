@@ -24,3 +24,30 @@ func ContainsCycle(node *linkedlist.Node) bool {
 	}
 	return false
 }
+
+func ReverseLinkedList() {
+	reverse := func(node *linkedlist.Node) *linkedlist.Node {
+		// Init our three pointers
+		var head, next, cursor *linkedlist.Node = node, nil, nil
+
+		// p moves through the head
+		for head != nil {
+			next = head.Next
+			head.Next = cursor
+			cursor = head
+			head = next
+		}
+		return cursor
+	}
+
+	// 1 2 3 4 5
+	// 5 4 3 2 1
+
+	list := linkedlist.NewNode("1")
+	list.Add("2").Add("3").Add("4")
+
+	list.Traverse()
+
+	rev := reverse(list)
+	rev.Traverse()
+}
