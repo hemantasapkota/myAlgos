@@ -47,7 +47,6 @@ func (t *BSTree) Insert(key int) {
 	default:
 		return
 	}
-
 }
 
 func (t *BSTree) InOrder(w []int) {

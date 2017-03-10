@@ -2,6 +2,7 @@ package main
 
 import (
 	ex "./excercises"
+	"fmt"
 )
 
 func main() {
@@ -12,5 +13,17 @@ func main() {
 
 	// Stack based question
 	println(ex.MatchDelimeters("{ [ ( ] ) }"))
+
+	ex.ReverseLinkedList()
+
+	// TODO: Review this
+	s := ex.MakeStack()
+	ex.ReverseStackUsingRecursion(s)
+
+	val := s.Pop()
+	for val != nil {
+		fmt.Println(val)
+		val = s.Pop()
+	}
 
 }

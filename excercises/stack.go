@@ -4,6 +4,17 @@ import (
 	"../stack"
 )
 
+func MakeStack() stack.Stack {
+	s := stack.Stack{}
+	makeIntStack := func() stack.Stack {
+		for i := 1; i < 5; i++ {
+			s.Push(i)
+		}
+		return s
+	}
+	return makeIntStack()
+}
+
 func MatchDelimeters(input string) bool {
 	delimMap := make(map[string]string)
 	delimMap["}"] = "{"
@@ -40,4 +51,31 @@ func MatchDelimeters(input string) bool {
 	}
 
 	return isMatched(input)
+}
+
+//
+
+func stack_insertAtBottom(s stack.Stack, x interface{}) {
+	if s.Len() == 0 {
+		s.Push(x)
+	} else {
+		val := s.Peek()
+		s.Pop()
+		stack_insertAtBottom(s, x)
+		s.Push(val)
+	}
+}
+
+func stack_reverse(s stack.Stack) stack.Stack {
+	if s.Len() > 0 {
+		val := s.Peek()
+		s.Pop()
+		stack_reverse(s)
+		stack_insertAtBottom(s, val)
+	}
+	return s
+}
+
+func ReverseStackUsingRecursion(s stack.Stack) stack.Stack {
+	return stack_reverse(s)
 }

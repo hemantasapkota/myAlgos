@@ -22,7 +22,7 @@ func New() *Stack {
 func (s *Stack) Push(value interface{}) {
 	s.top = &Element{Value: value, Next: s.top}
 	s.size++
-	log.Printf("Pushing %v, Updated Size: %d", value, s.size)
+	// log.Printf("Pushing %v, Updated Size: %d", value, s.size)
 }
 
 func (s *Stack) Len() int {
@@ -34,7 +34,7 @@ func (s *Stack) Pop() interface{} {
 		value := s.top.Value
 		s.top = s.top.Next
 		s.size--
-		log.Printf("Popping %v, Updated Size: %d", value, s.size)
+		// log.Printf("Popping %v, Updated Size: %d", value, s.size)
 		return value
 	}
 	return nil
@@ -43,7 +43,7 @@ func (s *Stack) Pop() interface{} {
 func (s *Stack) Peek() interface{} {
 	if s.size > 0 {
 		value := s.top.Value
-		log.Printf("Peeking: %v", value)
+		// log.Printf("Peeking: %v", value)
 		return value
 	}
 	return nil

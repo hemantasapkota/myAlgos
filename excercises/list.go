@@ -30,7 +30,6 @@ func ReverseLinkedList() {
 		// Init our three pointers
 		var head, next, cursor *linkedlist.Node = node, nil, nil
 
-		// p moves through the head
 		for head != nil {
 			next = head.Next
 			head.Next = cursor
