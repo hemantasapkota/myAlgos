@@ -26,4 +26,9 @@ func main() {
 		val = s.Pop()
 	}
 
+	value := []byte("Hello World")
+	ex.ReverseCharsInPlace(value)
+
+	fmt.Println(string(value))
+
 }
