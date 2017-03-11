@@ -2,7 +2,6 @@ package main
 
 import (
 	ex "./excercises"
-	"fmt"
 )
 
 func main() {
@@ -16,19 +15,7 @@ func main() {
 
 	ex.ReverseLinkedList()
 
-	// TODO: Review this
-	s := ex.MakeStack()
-	ex.ReverseStackUsingRecursion(s)
+	ex.ReverseStackUsingRecursion()
 
-	val := s.Pop()
-	for val != nil {
-		fmt.Println(val)
-		val = s.Pop()
-	}
-
-	value := []byte("Hello World")
-	ex.ReverseCharsInPlace(value)
-
-	fmt.Println(string(value))
-
+	ex.ReverseCharsInPlace()
 }

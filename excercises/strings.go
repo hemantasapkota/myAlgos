@@ -1,6 +1,6 @@
 package excercises
 
-func ReverseCharsInPlace(value []byte) {
+func reverseCharsInPlace(value []byte) {
 	// Hello World
 	// dlorw olleh
 	j := len(value) - 1
@@ -10,4 +10,10 @@ func ReverseCharsInPlace(value []byte) {
 		value[i] = c
 		j--
 	}
+}
+
+func ReverseCharsInPlace() {
+	value := []byte("Hello World")
+	reverseCharsInPlace(value)
+	println(string(value))
 }

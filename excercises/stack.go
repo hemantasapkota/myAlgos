@@ -2,6 +2,7 @@ package excercises
 
 import (
 	"../stack"
+	"fmt"
 )
 
 func MakeStack() stack.Stack {
@@ -29,7 +30,6 @@ func MatchDelimeters(input string) bool {
 	isOpener := func(delim string) bool {
 		return delim == "{" || delim == "[" || delim == "("
 	}
-
 	// {[[[]]]}
 	isMatched := func(input string) bool {
 		tracker := stack.New()
@@ -76,6 +76,18 @@ func stack_reverse(s stack.Stack) stack.Stack {
 	return s
 }
 
-func ReverseStackUsingRecursion(s stack.Stack) stack.Stack {
-	return stack_reverse(s)
+func ReverseStackUsingRecursion() {
+	s := MakeStack()
+
+	stack_reverse(s)
+
+	// Print stack
+	val := s.Pop()
+	for val != nil {
+		fmt.Print(val)
+		val = s.Pop()
+	}
+
+	println()
+
 }
