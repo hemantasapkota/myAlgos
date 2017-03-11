@@ -1,3 +1,1 @@
-# myAlgos - Reviewing CS basics from Uni days
-
-Algorithms Analysis
+# myAlgos - Algorithmic Thinking in Golang
